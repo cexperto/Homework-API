@@ -38,17 +38,20 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     
+    # projects apps
+    'movies',
+    'customusers',
     #external apps
     'rest_framework',
     'rest_framework.authtoken',
-    # projects apps
-    'movies',
-    'customusers'
+    # 'dj_rest_auth',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -59,14 +62,16 @@ MIDDLEWARE = [
 ROOT_URLCONF = "homework.urls"
 
 REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'customusers.exceptions.status_code_handler',
     'NON_FIELD_ERRORS_KEY': 'errors',
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication'
-    ),
+    ],
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated'
-    )
+        'rest_framework.permissions.IsAuthenticated',
+    )    
 }
 
 TEMPLATES = [
@@ -152,3 +157,6 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = 'customusers.CustomUser'
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
