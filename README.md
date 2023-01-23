@@ -6,7 +6,9 @@ A project to make crud with movies table with user registered and authenticated
 
 ## Deployment
 
-To deploy this project, ther are 2 options: cli, Manually
+Project in AWS : http://100.25.109.41/
+
+To deploy this project in local, ther are 2 options: cli, Manually
 
 Manually:
 
@@ -54,6 +56,8 @@ When the project already runing go to
 
 
 http://127.0.0.1:8000/
+
+
 ## API Reference
 
 http://127.0.0.1:8000/
@@ -183,6 +187,8 @@ Headers
 | key |      Value                       |
 | :--------  | :-------------------------------- |
 | `Authorization` | Bearer <access token> |
+
+
 Response:
 
     status 200
@@ -287,6 +293,26 @@ Response example
         "number": [
             "[6]"
         ]
+    }
+
+
+#### Refresh Token
+
+Refresh token after 20 min
+
+```http
+  POST /auth/token/refresh/
+```
+Json example:
+
+    {
+        "refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3NDU2NjcyNCwiaWF0IjoxNjc0NDgwMzI0LCJqdGkiOiIxOWE4ZTZhNjY1NGY0OGFmYTJhMTgzZGIzYThiNjg2MyIsInVzZXJfaWQiOjN9.1QZ7fDx2Q3G_yRR2-N_kqu2XZRLLtXR9V2JOZBk2kD8"
+    }
+
+Response
+
+    {
+        "access":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc0NDg0OTI3LCJpYXQiOjE2NzQ0ODAzMjQsImp0aSI6IjVkZjFlMWU5ZWY2ZDRlMTFhMGY1ZGYyMzE3OWEwOTAxIiwidXNlcl9pZCI6M30.QbyZk-0T4DjAYCWhrit_dxvCouRD_-7Gt-Ycq1SqSRw"
     }
 
 
