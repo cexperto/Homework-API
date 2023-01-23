@@ -41,11 +41,10 @@ INSTALLED_APPS = [
     # projects apps
     'movies',
     'customusers',
-    #external apps
+    'randomnumber',
+    # external apps
     'rest_framework',
     'rest_framework.authtoken',
-    # 'dj_rest_auth',
-    # 'corsheaders'
 ]
 
 MIDDLEWARE = [

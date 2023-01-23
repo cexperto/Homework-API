@@ -1,19 +1,12 @@
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework.permissions import (
     IsAuthenticated,
     IsAuthenticatedOrReadOnly
 )
-from rest_framework.decorators import api_view, permission_classes
-from rest_framework import generics, mixins, status
-from rest_framework.response import Response
+from rest_framework import generics, mixins
 from rest_framework.request import Request
-from rest_framework.exceptions import AuthenticationFailed
-from rest_framework.views import APIView
 from rest_framework.pagination import PageNumberPagination
-
 from rest_framework.generics import ListAPIView
 
-from customusers.models import CustomUser as User
 from movies.models import Movies
 from movies.serializer import MoviesSerializer
 from .permissions import UserOrReadOnly

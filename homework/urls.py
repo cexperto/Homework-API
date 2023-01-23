@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
 
+
 def index(request):
     return HttpResponse('homework API')
 
@@ -25,8 +26,7 @@ urlpatterns = [
     path('', index, name='index'),
     path("admin/", admin.site.urls),
     path('auth/', include('customusers.urls')),
-    # path("accounts/", include("django.contrib.auth.urls")),
     path("accounts/", include('dj_rest_auth.urls')),
     path('movies/', include('movies.urls')),
-
+    path('random/', include('randomnumber.urls')),
 ]

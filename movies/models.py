@@ -5,6 +5,8 @@ PRIVATE_CHOICES = (
     (0,0), 
     (1,1),
     )
+    
+
 class Movies(models.Model):
     """
     private field choices:

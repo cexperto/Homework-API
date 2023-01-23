@@ -59,3 +59,8 @@ class MovieListCreateTestCase(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response.data["name"], sample_data["name"])
+
+
+    def test_random_number(self):
+        response = self.client.get(reverse('random'))
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
