@@ -1,11 +1,17 @@
-from .views import SignUpView, LoginView, UserAPIView, RefreshAPIView
+from .views import SignUpView, LoginView
 from django.urls import path
 
-from django.views.decorators.csrf import csrf_exempt
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView,
+)
+
 
 urlpatterns = [
     path('signup/', SignUpView.as_view(), name='signup'),
     path('login/', LoginView.as_view(), name='login'),
-    path('refresh/', RefreshAPIView.as_view(), name='refresh'),
-    path('user/', UserAPIView.as_view(), name='user')
+    path("token/create/", TokenObtainPairView.as_view(), name="jwt_create"),
+    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+    path("token/verify/", TokenVerifyView.as_view(), name="token_verify"),
 ]
