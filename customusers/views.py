@@ -45,19 +45,3 @@ class LoginView(APIView):
 
         else:
             return Response(data={"message": "Invalid Credentials"})
-
-
-from django.core.management import BaseCommand, call_command
-
-
-from customusers.models import CustomUser as User
-
-class Command(BaseCommand):
-    help = "DEV COMMAND: Fill databasse with a set of data for testing purposes"
-
-    def handle(self, *args, **options):
-        call_command('loaddata','initial_data')
-        # Fix the passwords of fixtures
-        for user in User.objects.all():
-            user.set_password(user.password)
-            user.save()
