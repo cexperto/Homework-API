@@ -290,6 +290,19 @@ Response example
     }
 
 
+Run tests:
+
+run:
+
+Windows:
+
+    python manage.py test
+
+Linux:
+
+    python3 manage.py test
+
+
 ## Authors
 
 - [@cexperto](https://www.github.com/cexperto)
