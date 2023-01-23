@@ -1,0 +1,4 @@
+py manage.py makemigrations customusers movies
+py manage.py migrate
+py manage.py loaddata homework/fixtures/data.json
+py manage.py runserver

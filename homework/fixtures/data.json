@@ -1,0 +1,43 @@
+[
+  {
+    "model": "customusers.CustomUser",    
+    "fields": {
+      "email": "johnlenon@mail.com",
+      "password": "Pass123@word",
+      "date_register":"2019-09-25 06:00"
+    }
+  },  
+  {
+    "model": "movies.Movies",
+    "fields": {
+      "name": "movie one",
+      "description": "Description 1",
+      "year": "2023",
+      "category": "category 1",
+      "private": 0,
+      "user": 1
+    }
+  },
+  {
+    "model": "movies.Movies",    
+    "fields": {
+      "name": "movie two",
+      "description": "Description 2",
+      "year": "2023",
+      "category": "category 2",
+      "private": 0,
+      "user": 1
+    }
+  },
+  {
+    "model": "movies.Movies",    
+    "fields": {
+      "name": "movie three",
+      "description": "Description 3",
+      "year": "2023",
+      "category": "category 3",
+      "private": 0,
+      "user": 1
+    }
+  }  
+]
